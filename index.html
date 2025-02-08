@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Realistic Solar System</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #000000;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        #info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 5px;
+        }
+
+        #loading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .planet-label {
+            transition: all 0.1s ease-out;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        button:hover {
+            background-color: #666 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loading">Loading Solar System...</div>
+    <div id="info">
+        Controls:<br>
+        - Left click + drag to rotate<br>
+        - Right click + drag to pan<br>
+        - Scroll to zoom<br>
+        <br>
+        Distances and sizes are not to exact scale<br>
+        to make visualization possible
+    </div>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
